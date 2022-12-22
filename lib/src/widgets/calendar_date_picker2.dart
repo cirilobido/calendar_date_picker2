@@ -5,6 +5,7 @@
 import 'dart:math' as math;
 
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
+import 'package:calendar_date_picker2/src/utils/extensions.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -404,7 +405,7 @@ class _DatePickerModeToggleButtonState
                       children: <Widget>[
                         Flexible(
                           child: Text(
-                            widget.title,
+                            widget.title.toTitleCase(),
                             overflow: TextOverflow.ellipsis,
                             style: widget.config.controlsTextStyle ??
                                 textTheme.titleSmall?.copyWith(
@@ -565,7 +566,7 @@ class _MonthPickerState extends State<_MonthPicker> {
           _focusedDay = _focusableDayForMonth(_currentMonth, _focusedDay!.day);
         }
         SemanticsService.announce(
-          _localizations.formatMonthYear(_currentMonth),
+          _localizations.formatMonthYear(_currentMonth).toTitleCase(),
           _textDirection,
         );
       }
