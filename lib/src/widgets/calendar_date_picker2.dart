@@ -566,7 +566,7 @@ class _MonthPickerState extends State<_MonthPicker> {
           _focusedDay = _focusableDayForMonth(_currentMonth, _focusedDay!.day);
         }
         SemanticsService.announce(
-          _localizations.formatMonthYear(_currentMonth).toTitleCase(),
+          _localizations.formatMonthYear(_currentMonth),
           _textDirection,
         );
       }
